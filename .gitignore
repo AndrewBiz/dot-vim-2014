@@ -1,0 +1,8 @@
+bundle/
+.netrw*
+.netr*
+.net*
+*swp
+*swo
+*~
+.DS_Store
