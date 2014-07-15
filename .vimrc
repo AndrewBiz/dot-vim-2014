@@ -27,7 +27,7 @@ Bundle 'Railscasts-Theme-GUIand256color'
 "Bundle 'mileszs/ack.vim.git'
 "Bundle 'niquola/vim-hl7.git'
 " Bundle 'wuxb45/ADL.git'
-"Bundle 'kien/ctrlp.vim.git'
+Bundle 'kien/ctrlp.vim.git'
 "Bundle 'groenewege/vim-less'
 "Bundle 'tpope/vim-dispatch.git'
 Bundle 'ngmy/vim-rubocop.git'
@@ -38,13 +38,17 @@ Bundle 'tpope/vim-rails.git'
 "Bundle 'rking/vim-detailed'
 "Bundle 'tpope/vim-endwise.git'
 "Bundle 'tpope/vim-surround.git'
-"Bundle 'ervandew/supertab.git'
+Bundle 'ervandew/supertab.git'
 "Bundle 'powerman/vim-plugin-ruscmd.git'
 "Bundle 'slimv.vim'
 "Bundle 'tpope/vim-fireplace.git'
 "Bundle 'tpope/vim-classpath.git'
 "Bundle 'guns/vim-clojure-static.git'
-Bundle "pangloss/vim-javascript"
+"Bundle "pangloss/vim-javascript"
+" http://tuom.as/2013/11/24/my-ruby-on-rails-workflow-with-vim-rspec-and-tmux.html
+Bundle "scrooloose/nerdtree"
+Bundle "jgdavey/tslime.vim"
+Bundle "thoughtbot/vim-rspec"
 
 filetype plugin indent on     " required!
 
@@ -143,5 +147,14 @@ map \rl :RememberSpecLine<cr>
 " 4251  sed -i 's/FHIRValueSets/Terrminology/g' **/*(.)
 " 4253  sed -i 's/fhir_value_sets/terrminology/g' **/*(.)
 " 4254  rename 's/fhir_value_sets/terrminology/' **/*
+" got from
+
+" http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+" vim-rspec mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 autocmd BufWritePre * :FixWhitespace
